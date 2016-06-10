@@ -1,0 +1,51 @@
+package cl.java.db;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+import java.sql.PreparedStatement;
+
+public class ProgramaInsert {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+
+		System.out.println("el programa se conecto");
+		Connection conexion = DriverManager.getConnection("jdbc:mysql://192.168.124:3306/curso", "alumnos", "java123");
+
+		String nombreUsuario = JOptionPane.showInputDialog("Ingrese usuario");
+		String password = JOptionPane.showInputDialog("Ingrese password");
+
+		// Statement s = conexion.createStatement();
+
+		PreparedStatement s = conexion.prepareStatement("select * from usuarios where nombre_usuario =? AND password =?;");
+
+		s.setString(1, nombreUsuario);
+		s.setString(2, password);
+		ResultSet rs = s.executeQuery();
+
+		if (rs.next()) {
+			JOptionPane.showMessageDialog(null, "Acceso correcto");
+		} else {
+			JOptionPane.showMessageDialog(null, "Acceso Denegado");
+
+		}
+
+		// ResultSet rs = s.executeQuery("select * from alumnos");
+		// while(rs.next()){
+		// System.out.println(rs.getInt(1));
+		// System.out.println(rs.getInt("idalumno"));
+		//
+		// System.out.println(rs.getString("nombre"));
+		// System.out.println(rs.getString(2));
+		// System.out.println(rs.getString("apellido"));
+		// System.out.println(rs.getString(3));
+
+	}
+
+}

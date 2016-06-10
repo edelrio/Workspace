@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;cl.java.db&apos; to &apos;ConectarseAUnaBaseDeDatos&apos;&#x0D;&#x0A;- Original element: &apos;cl.java.db&apos;&#x0D;&#x0A;- Renamed element: &apos;cl.java.db&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;cl.java.db&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=cl.java.db" name="ConectarseAUnaBaseDeDatos" references="true" stamp="1464970057040" version="1.0"/>
+</session>

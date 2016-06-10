@@ -1,0 +1,20 @@
+package cl.java.db;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("el programa se conecto");
+			
+		} catch (ClassNotFoundException e){
+			
+			System.out.println("el Driver requerido no esta cargado.");
+			
+		}
+	}
+
+}

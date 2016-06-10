@@ -1,0 +1,11 @@
+package cl.curso.java.ejemplo;
+
+public class MsWinsdowsWidgetFactory implements AbstractWidgetFactory{
+
+	public Window createWindow() {
+		// TODO Auto-generated method stub
+		return new MsWindow();
+	}
+
+	
+}

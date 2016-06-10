@@ -1,0 +1,42 @@
+package cl.curso.java.guia12;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
+public class ProgramaBuenosDias {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String text = "buenos dias buenos dias";
+		String[] palabras = text.split(" ");
+		// for (int i = 0; i < palabras.length; i++) {
+		// System.out.println(palabras[i]);
+		// }
+
+		Map<String, Integer> mapa = new HashMap<String, Integer>();
+
+		for (int i = 0; i < palabras.length; i++) {
+			if (mapa.containsKey(palabras[i])) {
+				mapa.put(palabras[i], mapa.get(palabras[i]) + 1);
+
+			} else {
+				mapa.put(palabras[i], 1);
+			}
+
+		}
+		Iterator<Entry<String, Integer>> it = mapa.entrySet().iterator();
+		while (it.hasNext()) {
+			Entry<String, Integer> e = it.next();
+			System.out.println(e.getKey() + " " + e.getValue());
+		}
+		Map<Integer, String> jugadores = new TreeMap<Integer, String>();
+		jugadores.put(23, "Michael Jordan");
+		jugadores.put(3, "Allen Iverson");
+		jugadores.put(55, "Jason Williams");
+
+	}
+}
